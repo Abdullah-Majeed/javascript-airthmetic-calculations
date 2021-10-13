@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculations</title>
+</head>
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<body style="text-align: center;">
+    <h1>Simple Javascript Airthmetic Calculations</h1>
+    <p style="font-weight: bold; font-size: 14px;"> operand 1:</p>
+    <input type="number" id="operand1">
+    <br>
+    <p style="font-weight: bold; font-size: 14px;"> operand 2:</p>
+    <input type="number" id="operand2">
+    <br>
+    <p style="font-weight: bold; font-size: 14px;"> operator :</p>
+    <input type="text" id="operator">
+    <br>
+    <br>
+
+
+    <button onclick=" myfunction()">Calculate</button>
+    <h3 id="result"></h3>
+    <script>
+        function myfunction() {
+            let operand1 = document.getElementById("operand1").value;
+            let operand2 = document.getElementById("operand2").value;
+            let operator = document.getElementById("operator").value;
+            console.log(operator)
+            var result;
+            switch (operator) {
+                case '+':
+                    result = Number(operand1) + Number(operand2);
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '-':
+                    result = Number(operand1) - Number(operand2);
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '*':
+                    result = Number(operand1) * Number(operand2);
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '/':
+                    result = Math.round((operand1) / Number(operand2));
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '%':
+                    result = Math.round((operand1) % Number(operand2));
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+
+                default:
+                    document.getElementById("result").innerHTML = "Invalid operator"
+                    break;
+            }
+
+            // let result = Number(num1) + Number(num2);
+            // console.log("result: ", result);
+
+        }
+    </script>
+</body>
+</html>
